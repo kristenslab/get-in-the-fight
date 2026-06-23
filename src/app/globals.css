@@ -24,3 +24,30 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* >>> patriot-gold overlay (auto-added — delete this block to remove) >>> */
+:root {
+  --patriot-gold:      #C5A046; /* gold — borders, chips, dividers, rings */
+  --patriot-gold-300:  #E2C97E; /* light gold — subtle fills              */
+  --patriot-gold-line: rgba(197, 160, 70, 0.35); /* gold hairline         */
+}
+
+/* Subtle, universal gold detail (zero specificity — easily overridden) */
+:where(html)            { accent-color: var(--patriot-gold); }            /* checkboxes, radios, range, progress */
+:where(:focus-visible)  { outline: 2px solid var(--patriot-gold); outline-offset: 2px; }
+::selection             { background: rgba(197, 160, 70, 0.30); }
+:where(hr)              { border: 0; border-top: 1px solid var(--patriot-gold-line); }
+
+/* Opt-in utilities — reach for these where you want gold detail */
+.gold,
+.text-gold     { color: var(--patriot-gold); }
+.border-gold   { border-color: var(--patriot-gold) !important; }
+.divider-gold  { border: 0; border-top: 1px solid var(--patriot-gold-line); }
+.ring-gold:focus-visible { outline: 2px solid var(--patriot-gold); outline-offset: 2px; }
+.chip-gold {
+  display: inline-flex; align-items: center; gap: .35em;
+  border: 1px solid var(--patriot-gold); color: var(--patriot-gold);
+  border-radius: 999px; padding: .125rem .55rem;
+  font-size: .75rem; line-height: 1.4;
+}
+/* <<< patriot-gold overlay <<< */
